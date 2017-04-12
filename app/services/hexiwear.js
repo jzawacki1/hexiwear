@@ -310,6 +310,7 @@ var Hexiwear = function () {
                         .then(function (value) {
                             /* Parsing characteristic readout */
                             self.healthData.steps = value.getUint16(0);
+                        self.healthData.steps = self.healthData.steps/256;
                             self.updateUI();
                         });
                 }),
